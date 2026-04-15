@@ -90,6 +90,21 @@
                   </div>
                   <div class="grid gap-4 sm:grid-cols-2">
                     <label class="grid gap-2 text-sm font-semibold text-white">
+                      Box Enquiry Type
+                      <select id="enquiryType" name="enquiryType" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-orange-400">
+                        <option value="Price quotation">Price quotation</option>
+                        <option value="Bulk order enquiry">Bulk order enquiry</option>
+                        <option value="Custom size enquiry">Custom size enquiry</option>
+                        <option value="Printed box enquiry">Printed box enquiry</option>
+                      </select>
+                    </label>
+                    <label class="grid gap-2 text-sm font-semibold text-white">
+                      Select Size
+                      <select id="boxSizeSelect" name="boxSizeSelect" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-orange-400"></select>
+                    </label>
+                  </div>
+                  <div class="grid gap-4 sm:grid-cols-2">
+                    <label class="grid gap-2 text-sm font-semibold text-white">
                       Product Type
                       <select id="productType" name="productType" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-orange-400"></select>
                     </label>
@@ -100,8 +115,8 @@
                   </div>
                   <div class="grid gap-4 sm:grid-cols-2">
                     <label class="grid gap-2 text-sm font-semibold text-white">
-                      Box Size
-                      <input class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-orange-400" type="text" name="boxSize" placeholder="Example: 18 x 12 x 10 inch" />
+                      Custom Size
+                      <input id="customBoxSize" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-orange-400" type="text" name="boxSize" placeholder="Example: 18 x 12 x 10 inch" />
                     </label>
                     <label class="grid gap-2 text-sm font-semibold text-white">
                       Printing Requirement

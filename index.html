@@ -159,16 +159,22 @@
                 </div>
               </div>
               <div class="glass-panel rounded-[2rem] p-6 sm:p-8">
-                <div class="grid gap-4 sm:grid-cols-2">
-                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <p class="text-sm text-orange-300">Best For</p>
-                    <p class="mt-2 text-xl font-bold text-white">Courier and e-commerce supply</p>
+                <p class="text-xs font-extrabold uppercase tracking-[0.35em] text-orange-300">Quick Box Enquiry</p>
+                <h2 class="mt-3 text-2xl font-bold text-white">Select box type and size to start enquiry faster.</h2>
+                <form id="quick-enquiry-form" class="mt-6 grid gap-4 sm:grid-cols-2">
+                  <label class="grid gap-2 text-sm font-semibold text-white">
+                    Box Type
+                    <select id="quick-product-type" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-orange-400"></select>
+                  </label>
+                  <label class="grid gap-2 text-sm font-semibold text-white">
+                    Select Size
+                    <select id="quick-box-size" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-orange-400"></select>
+                  </label>
+                  <div class="sm:col-span-2 flex flex-col gap-3 sm:flex-row">
+                    <button type="submit" class="inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-3.5 font-semibold text-white transition hover:bg-orange-400">Start Box Enquiry</button>
+                    <a href="enquiry.html" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3.5 font-semibold text-white transition hover:bg-white/10">Open Full Enquiry Form</a>
                   </div>
-                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <p class="text-sm text-orange-300">Also Used In</p>
-                    <p class="mt-2 text-xl font-bold text-white">Warehouse, retail, and industrial packing</p>
-                  </div>
-                </div>
+                </form>
               </div>
             </div>
           </section>
@@ -225,6 +231,15 @@
             <div id="product-grid" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3"></div>
           </section>
 
+          <section id="gallery" class="reveal py-10 sm:py-14">
+            <div class="mb-8 flex flex-col gap-3 sm:mb-10">
+              <p class="text-xs font-extrabold uppercase tracking-[0.35em] text-orange-300">Box Images</p>
+              <h2 class="text-3xl font-bold text-white sm:text-4xl">Sample carton box images for different box types.</h2>
+              <p class="max-w-3xl text-stone-300">The gallery below uses custom vector illustrations so you can show box styles without relying on third-party copyrighted images.</p>
+            </div>
+            <div id="sample-gallery" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4"></div>
+          </section>
+
           <section id="guidance" class="reveal py-10 sm:py-14">
             <div class="mb-8 flex flex-col gap-3 sm:mb-10">
               <p class="text-xs font-extrabold uppercase tracking-[0.35em] text-orange-300">Best Guidance</p>
@@ -247,6 +262,31 @@
                 <h3 class="text-xl font-bold text-white">For export and heavy load</h3>
                 <p class="mt-3 text-sm leading-7 text-stone-300">Heavy-duty corrugated boxes with stronger bursting strength help reduce transit damage.</p>
               </article>
+            </div>
+          </section>
+
+          <section id="faq" class="reveal py-10 sm:py-14">
+            <div class="mb-8 flex flex-col gap-3 sm:mb-10">
+              <p class="text-xs font-extrabold uppercase tracking-[0.35em] text-orange-300">FAQ</p>
+              <h2 class="text-3xl font-bold text-white sm:text-4xl">Frequently asked questions about carton boxes and orders.</h2>
+            </div>
+            <div class="grid gap-4">
+              <details class="faq-item" open>
+                <summary>Which carton box is best for courier shipment?</summary>
+                <p>For most courier shipments, 5 ply corrugated boxes are the safer choice because they handle stacking, movement, and medium load better than lighter boxes.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Can I order custom sizes for my product?</summary>
+                <p>Yes. You can share your product dimensions, weight, and quantity, and Anshika Enterprises can recommend a more suitable box size and material strength.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Do you offer plain and printed carton boxes?</summary>
+                <p>Yes. Plain outer boxes, single-color print, and branded printed packaging options can be discussed based on order quantity and use case.</p>
+              </details>
+              <details class="faq-item">
+                <summary>What details should I send for faster quotation?</summary>
+                <p>Send box type, size, quantity, product use, printing requirement, and delivery location. This helps create a faster and more accurate quote.</p>
+              </details>
             </div>
           </section>
 
@@ -277,6 +317,34 @@
           <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.56 0 1 .44 1 1V20c0 .56-.44 1-1 1C10.07 21 3 13.93 3 5c0-.56.44-1 1-1h3.5c.56 0 1 .44 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2Z"/></svg>
         </a>
       </div>
+
+      <section id="chat-widget" class="chat-shell" aria-label="Chat support">
+        <button id="chat-toggle" class="chat-toggle" type="button" aria-expanded="false">
+          <span>Chat With Us</span>
+        </button>
+        <div id="chat-panel" class="chat-panel hidden">
+          <div class="chat-header">
+            <div>
+              <p class="chat-title">Packaging Help</p>
+              <p class="chat-subtitle">Quick answers for carton box enquiries</p>
+            </div>
+            <button id="chat-close" class="chat-close" type="button" aria-label="Close chat">×</button>
+          </div>
+          <div id="chat-messages" class="chat-messages">
+            <div class="chat-bubble bot">Hello. I can help with box type, size, quantity, and WhatsApp enquiry.</div>
+          </div>
+          <div class="chat-actions">
+            <button class="chat-chip" type="button" data-chat-reply="I need 3 ply carton box details">3 Ply</button>
+            <button class="chat-chip" type="button" data-chat-reply="I need 5 ply carton box details">5 Ply</button>
+            <button class="chat-chip" type="button" data-chat-reply="I want custom size carton box">Custom Size</button>
+            <button class="chat-chip" type="button" data-chat-reply="I need bulk quantity quotation">Bulk Quote</button>
+          </div>
+          <form id="chat-form" class="chat-form">
+            <input id="chat-input" type="text" placeholder="Type your question" />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
     </div>
 
     <script src="script.js"></script>
