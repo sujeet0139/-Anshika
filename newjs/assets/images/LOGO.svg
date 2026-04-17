@@ -1,0 +1,18 @@
+<svg width="250" height="60" viewBox="0 0 250 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="LogoIcon">
+    <path d="M10 20L30 10L50 20V40L30 50L10 40V20Z" fill="#0F172A"/>
+    <path d="M30 10V30L50 40M30 30L10 40" stroke="#F97316" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10 20L30 30L50 20" stroke="white" stroke-width="1.5" stroke-opacity="0.2"/>
+  </g>
+
+  <text x="65" y="35" font-family="Arial, sans-serif" font-weight="900" font-size="24" fill="#0F172A" letter-spacing="-1">
+    ANSHIKA
+  </text>
+  <text x="178" y="35" font-family="Arial, sans-serif" font-weight="900" font-size="24" fill="#F97316" letter-spacing="-1">
+    SIGMA
+  </text>
+  
+  <text x="65" y="52" font-family="Arial, sans-serif" font-weight="700" font-size="10" fill="#64748B" letter-spacing="4">
+    PACKAGING SOLUTIONS
+  </text>
+</svg>

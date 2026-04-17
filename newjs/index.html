@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshika Sigma - Heavy Industry Packaging</title>
+    <style>
+        :root {
+            --primary: #d35400; /* Industrial Orange */
+            --primary-dark: #a04000;
+            --secondary: #2c3e50; /* Deep Blue/Gray */
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--text-light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--secondary);
+        }
+
+        /* Sections Common */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Slider */
+        .hero-slider {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 2rem;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            z-index: 1;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Slightly lighter overlay so images pop */
+            z-index: -1;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.8s ease 0.3s;
+            position: relative;
+            z-index: 10;
+        }
+
+        .slide.active .hero-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Glassmorphism Effect for Banner */
+        .glass-effect {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.8rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        /* Slider Controls */
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .slider-btn {
+            background-color: rgba(0,0,0,0.4);
+            color: white;
+            border: none;
+            padding: 1.5rem 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: background 0.3s;
+        }
+
+        .slider-btn:hover {
+            background-color: var(--primary);
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+            text-align: center;
+            z-index: 3;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            background-color: rgba(255,255,255,0.4);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active, .dot:hover {
+            background-color: var(--primary);
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        /* About Us */
+        .about-section {
+            background-color: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-top: 0;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            margin-bottom: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-info h3 {
+            margin-top: 0;
+            color: var(--secondary);
+            font-size: 1.4rem;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Capabilities Banner */
+        .capabilities {
+            background-color: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .cap-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cap-item h4 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin: 0 0 0.5rem 0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            text-align: left;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-info h4, .footer-social h4 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: #aaa;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chat-toggle {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.1);
+            background-color: var(--primary-dark);
+        }
+
+        .chat-box {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 320px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .chat-box.active {
+            display: flex;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .chat-header button {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .chat-messages {
+            height: 250px;
+            padding: 1rem;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .msg {
+            max-width: 80%;
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .bot-msg {
+            background-color: white;
+            color: #333;
+            align-self: flex-start;
+            border-bottom-left-radius: 0;
+            border: 1px solid #eee;
+        }
+
+        .user-msg {
+            background-color: var(--primary);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .chat-input button {
+            background-color: transparent;
+            color: var(--primary);
+            border: none;
+            font-weight: bold;
+            padding: 0 15px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .about-grid, .contact-container, .cap-grid {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+            .slider-btn { padding: 1rem 0.5rem; font-size: 1.5rem; }
+            .hero-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="./assets/images/LOGO.svg" alt="Logo" style="height: 40px; vertical-align: middle; margin-right: 10px;">ANSHIKA<span>SIGMA</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#capabilities">Capabilities</a></li>
+            </ul>
+            <a href="enquiry.html" class="btn">Get a Quote</a> <a href="login.html" class="btn btn-outline" style="color:var(--secondary);border-color:var(--secondary);margin-left:10px;">Login</a>
+        </div>
+    </nav>
+
+    <!-- Main Hero Slider (3 Images) -->
+    <header id="home" class="hero-slider">
+        <!-- Slide 1: Custom Packaging -->
+        <div class="slide active" style="background-image: url('./assets/images/banner1.svg');">
+            <div class="hero-content glass-effect">
+                <span class="hero-badge">Premium Packaging</span>
+                <h1>Custom Packaging Solutions</h1>
+                <p>Tailor-made corrugated boxes designed to protect, present, and promote your products globally.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn">Explore Our Products</a>
+                    <a href="enquiry.html" class="btn btn-outline">Request a Sample</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2: Heavy-Duty Industrial -->
+        <div class="slide" style="background-image: url('./assets/images/banner2.svg');">
+            <div class="hero-content glass-effect">
+                <span class="hero-badge">Heavy Duty</span>
+                <h1>Industrial Strength Boxes</h1>
+                <p>Engineered for maximum protection. Our 5-ply and 7-ply export boxes ensure your heavy machinery and assets arrive safely.</p>
+                <div class="hero-buttons">
+                    <a href="enquiry.html" class="btn">Get Bulk Pricing</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3: High-Speed Production -->
+        <div class="slide" style="background-image: url('./assets/images/banner3.svg');">
+            <div class="hero-content glass-effect">
+                <span class="hero-badge">Scale & Precision</span>
+                <h1>Automated Packaging Lines</h1>
+                <p>100% automated production capabilities outputting 50,000+ precision-cut units daily to keep your supply chain moving.</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+            <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container about-grid">
+            <div class="about-text">
+                <h2>Why Choose Us</h2>
+                <h3>Building Trust Through Quality & Scale</h3>
+                <p>At Anshika Sigma, we don't just make boxes; we engineer packaging solutions that protect your valuable industrial assets. With state-of-the-art automated manufacturing lines, we guarantee consistency across massive production volumes.</p>
+                <ul class="features-list">
+                    <li>Fully Automated 3/5/7 Ply Board Plants</li>
+                    <li>In-house Multi-color Flexo Printing</li>
+                    <li>Advanced Quality Testing Laboratory</li>
+                    <li>Eco-friendly & Recyclable Kraft Paper</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="./assets/images/about.svg" alt="Advanced Corrugated Manufacturing Facility" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2 class="section-title">Our Product Range</h2>
+            <div class="product-grid">
+                
+                <!-- Category 1 -->
+                <div class="product-card">
+                    <span class="badge">Bestseller</span>
+                    <img src="./assets/images/PRODUCT/BOX.jpg" alt="Universal Corrugated Boxes">
+                    <div class="product-info">
+                        <h3><a href="product1.html" style="text-decoration:none; color:inherit;">Universal Corrugated Boxes (3/5/7 PLY)</a></h3>
+                        <p>High-burst-strength boxes designed for general industrial and FMCG use. Customizable dimensions and fluting.</p>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="product-card">
+                    <span class="badge">Premium</span>
+                    <img src="./assets/images/PRODUCT/CUSTOM_PRINTD.jpg" alt="Printed Duplex Cartons">
+                    <div class="product-info">
+                        <h3><a href="product2.html" style="text-decoration:none; color:inherit;">Printed Duplex & Branded Cartons</a></h3>
+                        <p>Premium folding cartons featuring vibrant offset printing, ideal for retail, cosmetics, and electronics.</p>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="product-card">
+                    <span class="badge">Heavy Duty</span>
+                    <img src="./assets/images/PRODUCT/BLACK.jpg" alt="Heavy-Duty Export Cartons">
+                    <div class="product-info">
+                        <h3><a href="product3.html" style="text-decoration:none; color:inherit;">Heavy-Duty Export Cartons</a></h3>
+                        <p>Reinforced double-wall & triple-wall cartons designed to withstand long transit times and heavy machinery loads.</p>
+                    </div>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="product-card">
+                    <img src="./assets/images/PRODUCT/PACKSMITH.jpg" alt="Die-Cut Boxes">
+                    <div class="product-info">
+                        <h3><a href="product4.html" style="text-decoration:none; color:inherit;">Custom Die-Cut Boxes & Folders</a></h3>
+                        <p>Precision-cut packaging for specialized items requiring exact fits, interlocking tabs, and display-ready formats.</p>
+                    </div>
+                </div>
+
+                <!-- Category 5 -->
+                <div class="product-card">
+                    <span class="badge">Clinical</span>
+                    <img src="./assets/images/PRODUCT/WHITEMAILERBOX.jpg" alt="Pharma Packaging">
+                    <div class="product-info">
+                        <h3><a href="product5.html" style="text-decoration:none; color:inherit;">Specialized Pharma Packaging</a></h3>
+                        <p>Clinical, clean-room manufactured white duplex cartons with high-fidelity printing for regulatory compliance.</p>
+                    </div>
+                </div>
+
+                <!-- Category 6 -->
+                <div class="product-card">
+                    <img src="./assets/images/PRODUCT/POWERLON.jpg" alt="Bulk Packaging Supplies">
+                    <div class="product-info">
+                        <h3><a href="product6.html" style="text-decoration:none; color:inherit;">Bulk Supply Chain Accessories</a></h3>
+                        <p>Industrial stretch films, BOPP tapes, edge protectors, and strapping solutions for palletized loads.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="capabilities">
+        <div class="container">
+            <h2>Industrial Scale Capacity</h2>
+            <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; opacity: 0.9;">We possess the infrastructure to handle India's largest corporate packaging demands without compromising on delivery timelines.</p>
+            
+            <div class="cap-grid">
+                <div class="cap-item">
+                    <h4>50K+</h4>
+                    <p>Boxes Manufactured Daily</p>
+                </div>
+                <div class="cap-item">
+                    <h4>100%</h4>
+                    <p>Automated Production</p>
+                </div>
+                <div class="cap-item">
+                    <h4>ISO</h4>
+                    <p>9001:2015 Certified</p>
+                </div>
+                <div class="cap-item">
+                    <h4>24/7</h4>
+                    <p>Logistics & Dispatch</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2>Partner With Us</h2>
+                <h3>Ready to upgrade your supply chain?</h3>
+                <p>Contact our packaging experts today for a custom consultation, material samples, and competitive bulk pricing.</p>
+                <br>
+                <p><strong>📍 Factory:</strong> Industrial Estate, Phase II</p>
+                <p><strong>📞 Phone:</strong> +91 98765 43210</p>
+                <p><strong>✉️ Email:</strong> sales@anshkasigma.com</p>
+            </div>
+            
+            <div class="contact-form">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Inquiry sent successfully!');">
+                    <div class="form-group">
+                        <label for="name">Company / Contact Name</label>
+                        <input type="text" id="name" required placeholder="Your Company Ltd.">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required placeholder="purchasing@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required placeholder="+91">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Packaging Requirements</label>
+                        <textarea id="message" rows="4" required placeholder="Tell us about the boxes you need (size, ply, quantity)..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Request Quote</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h4>ANSHIKA SIGMA</h4>
+                <p>Leading the industry in premium, heavy-duty packaging solutions.</p>
+            </div>
+            <div class="footer-social">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle><path d="M16 8a6 6 0 0 1 6 6v8h-4v-8a2 2 0 0 0-4 0v8h-4v-8a6 6 0 0 1 6-6z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="border-top: 1px solid #333; margin-top: 2rem; padding-top: 1rem;">
+            <p>&copy; 2026 Anshika Sigma Packaging Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chat Bot Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-toggle" id="chatToggle" aria-label="Open Chat">
+            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        </button>
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <h4>Anshika Support</h4>
+                <button id="chatClose">&times;</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="msg bot-msg">Hello! How can we help you with your packaging needs today?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInputText" placeholder="Type your message...">
+                <button id="chatSend">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slider Script -->
+    <script>
+        let currentSlideIdx = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let slideInterval;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlideIdx = (n + slides.length) % slides.length;
+            
+            slides[currentSlideIdx].classList.add('active');
+            dots[currentSlideIdx].classList.add('active');
+        }
+
+        function moveSlide(n) {
+            showSlide(currentSlideIdx + n);
+            resetInterval();
+        }
+
+        function currentSlide(n) {
+            showSlide(n);
+            resetInterval();
+        }
+
+        function nextSlide() {
+            showSlide(currentSlideIdx + 1);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000); // Change image every 5 seconds
+        }
+
+        // Initialize slider auto-play
+        if (slides.length > 0) {
+            resetInterval();
+        }
+        // Chat Bot Functionality
+        const chatToggle = document.getElementById('chatToggle');
+        const chatBox = document.getElementById('chatBox');
+        const chatClose = document.getElementById('chatClose');
+        const chatSend = document.getElementById('chatSend');
+        const chatInputText = document.getElementById('chatInputText');
+        const chatMessages = document.getElementById('chatMessages');
+
+        chatToggle.addEventListener('click', () => {
+            chatBox.classList.add('active');
+            chatToggle.style.display = 'none';
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatBox.classList.remove('active');
+            chatToggle.style.display = 'flex';
+        });
+
+        function addMessage(text, sender) {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('msg', sender === 'user' ? 'user-msg' : 'bot-msg');
+            msgDiv.textContent = text;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function handleSend() {
+            const text = chatInputText.value.trim();
+            if (text) {
+                addMessage(text, 'user');
+                chatInputText.value = '';
+                
+                // Simulate bot response
+                setTimeout(() => {
+                    addMessage("Thank you for your message! Our sales team will get back to you shortly.", 'bot');
+                }, 1000);
+            }
+        }
+
+        chatSend.addEventListener('click', handleSend);
+        chatInputText.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleSend();
+            }
+        });
+    </script>
+</body>
+</html>

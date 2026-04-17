@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote - Anshika Sigma</title>
+    <style>
+        :root {
+            --primary: #d35400;
+            --primary-dark: #a04000;
+            --secondary: #2c3e50;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        nav {
+            background-color: var(--text-light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .logo span { color: var(--primary); }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .contact-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: 2rem;
+        }
+        .contact-box h1 {
+            color: var(--secondary);
+            margin-top: 0;
+            text-align: center;
+        }
+        .contact-box p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            box-sizing: border-box;
+            background-color: #fafafa;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: white;
+        }
+        footer {
+            background-color: #111;
+            color: #aaa;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 5rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .contact-box { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="./assets/images/LOGO.svg" alt="Logo" style="height: 40px; vertical-align: middle; margin-right: 10px;">ANSHIKA<span>SIGMA</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#products">Products</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="contact-box">
+            <h1>Get a Quote</h1>
+            <p>Tell us about your packaging needs and our experts will provide a custom bulk pricing quote.</p>
+            
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Enquiry sent successfully! Our team will contact you soon.'); window.location.href='index.html';">
+                <div class="form-group">
+                    <label for="name">Company / Contact Name *</label>
+                    <input type="text" id="name" required placeholder="Your Company Ltd.">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" required placeholder="purchasing@company.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" required placeholder="+91">
+                </div>
+                <div class="form-group">
+                    <label for="product_type">Interested Product</label>
+                    <select id="product_type">
+                        <option value="universal">Universal Corrugated Boxes (3/5/7 PLY)</option>
+                        <option value="printed">Printed Duplex & Branded Cartons</option>
+                        <option value="heavy_duty">Heavy-Duty Export Cartons</option>
+                        <option value="die_cut">Custom Die-Cut Boxes & Folders</option>
+                        <option value="pharma">Specialized Pharma Packaging</option>
+                        <option value="supplies">Bulk Supply Chain Accessories</option>
+                        <option value="other">Other / Custom Requirement</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Packaging Requirements (Size, Ply, Quantity) *</label>
+                    <textarea id="message" rows="5" required placeholder="Please describe your requirements in detail..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; font-size: 1.2rem; padding: 1rem;">Submit Enquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Anshika Sigma Packaging Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
