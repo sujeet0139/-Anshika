@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Packaging Products | Anshika Enterprises</title>
+    <meta
+      name="description"
+      content="Explore corrugated boxes, printed boxes, duplex boxes, heavy duty cartons, and packaging materials from Anshika Enterprises with inquiry-based CTAs."
+    />
+    <meta property="og:title" content="Packaging Products | Anshika Enterprises" />
+    <meta property="og:description" content="Product categories with large visuals, use cases, customization scope, and inquiry-first CTAs." />
+    <meta property="og:image" content="https://anshika-sigma.vercel.app/assets/social-preview.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0d2b52" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,aspect-ratio"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="products" class="bg-slate-50 text-slate-900 antialiased">
+    <header class="site-header">
+      <div class="container header-row px-4 sm:px-6 lg:px-8">
+        <a class="brand" href="index.html" aria-label="Anshika Enterprises home">
+          <span class="brand-mark">AE</span>
+          <span>
+            <strong>Anshika Enterprises</strong>
+            <small>Corrugated Box & Packaging Manufacturer</small>
+          </span>
+        </a>
+        <button class="nav-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+        <nav class="site-nav" id="mobile-menu">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="enquiry.html">Inquiry</a>
+          <a class="button button-primary button-compact" href="enquiry.html">Request Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero product-hero">
+        <div class="container page-hero-grid px-4 sm:px-6 lg:px-8">
+          <div class="reveal">
+            <p class="eyebrow">Product Categories</p>
+            <h1>Packaging products presented for inquiry and customization</h1>
+            <p>Each section below focuses on use cases, available sizes, board options, and customization capability so the website clearly feels like a manufacturing company.</p>
+          </div>
+          <div class="reveal card-surface page-hero-card">
+            <img src="assets/quote-planning.svg" alt="Packaging quote planning overview" data-fallback-label="Quote Planning" />
+            <h2>What you can request</h2>
+            <ul class="summary-list">
+              <li>Large product visuals</li>
+              <li>Use-case based description</li>
+              <li>Customization, ply, and size guidance</li>
+              <li>Inquiry-first CTA for every category</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container product-page-layout px-4 sm:px-6 lg:px-8">
+          <div class="product-detail-stack" id="product-details"></div>
+          <aside class="product-side-panel reveal">
+            <article class="card-surface quote-visual-card image-panel">
+              <img src="assets/quality-check.svg" alt="Packaging quality and quote support" data-fallback-label="Packaging Quote Support" />
+            </article>
+            <form class="lead-form card-surface" id="product-quote-form" data-form-type="product">
+              <div class="form-heading">
+                <p class="eyebrow">Quick Quote</p>
+                <h2>Request quote for a product category</h2>
+              </div>
+              <label>
+                Product Category
+                <select id="quick-product-type" name="productType"></select>
+              </label>
+              <label>
+                Standard Size
+                <select id="quick-box-size" name="boxSizeSelect"></select>
+              </label>
+              <label>
+                Name
+                <input type="text" name="customerName" placeholder="Your name or company" required />
+              </label>
+              <label>
+                Phone
+                <input type="tel" name="mobileNumber" placeholder="Your number" required />
+              </label>
+              <label>
+                Requirement
+                <textarea name="message" placeholder="Mention quantity, print requirement, board strength, and delivery city" required></textarea>
+              </label>
+              <button class="button button-primary" type="submit">Request Quote</button>
+              <button class="button button-secondary trigger-callback" type="button">Need a Callback?</button>
+              <p class="form-note" data-form-note>We will prepare your requirement for email and WhatsApp.</p>
+            </form>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <p>© <span id="year"></span> Anshika Enterprises. Inquiry-based packaging manufacturer.</p>
+      </div>
+    </footer>
+
+    <div class="social-rail" aria-label="Social links">
+      <a href="https://wa.me/918750515157" target="_blank" rel="noreferrer">WA</a>
+      <a href="https://instagram.com/" target="_blank" rel="noreferrer">IG</a>
+      <a href="https://facebook.com/" target="_blank" rel="noreferrer">FB</a>
+      <a href="https://linkedin.com/" target="_blank" rel="noreferrer">IN</a>
+    </div>
+
+    <a class="floating-whatsapp" href="https://wa.me/918750515157?text=Hello%20Anshika%20Enterprises%2C%20I%20need%20details%20for%20a%20packaging%20category." target="_blank" rel="noreferrer">WhatsApp</a>
+    <div class="mobile-callbar">
+      <a href="tel:8750515157">Call Now</a>
+      <a href="enquiry.html">Inquiry</a>
+    </div>
+
+    <div class="chat-shell">
+      <button class="chat-toggle" id="chat-toggle" aria-expanded="false">FAQ Chat</button>
+      <div class="chat-panel hidden" id="chat-panel">
+        <div class="chat-header">
+          <div>
+            <p class="chat-title">Quick Packaging Help</p>
+            <p class="chat-subtitle">Ask common questions or jump to WhatsApp</p>
+          </div>
+          <button class="chat-close" id="chat-close" aria-label="Close chat">×</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <div class="chat-bubble bot">Ask about MOQ, custom size, delivery time, or product category.</div>
+        </div>
+        <div class="chat-actions">
+          <button class="chat-chip" data-chat-reply="What is MOQ?" type="button">What is MOQ?</button>
+          <button class="chat-chip" data-chat-reply="Do you provide custom size?" type="button">Do you provide custom size?</button>
+          <button class="chat-chip" data-chat-reply="Delivery time?" type="button">Delivery time?</button>
+        </div>
+        <form class="chat-form" id="chat-form">
+          <input id="chat-input" type="text" placeholder="Type your question" />
+          <button type="submit">Send</button>
+        </form>
+        <a class="chat-whatsapp-link" href="https://wa.me/918750515157?text=Hello%20Anshika%20Enterprises%2C%20I%20have%20a%20product%20query." target="_blank" rel="noreferrer">Continue on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="modal-backdrop hidden" id="callback-modal" aria-hidden="true">
+      <div class="modal-card">
+        <button class="modal-close" id="callback-close" aria-label="Close callback form">×</button>
+        <p class="eyebrow">Request Callback</p>
+        <h2>Discuss your packaging requirement with our team</h2>
+        <form class="lead-form compact-form" id="callback-form" data-form-type="callback">
+          <label>
+            Name
+            <input type="text" name="customerName" placeholder="Your name" required />
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="mobileNumber" placeholder="Your phone number" required />
+          </label>
+          <label>
+            Requirement
+            <textarea name="message" placeholder="Mention product category, quantity, or customization" required></textarea>
+          </label>
+          <button class="button button-primary" type="submit">Request Callback</button>
+          <p class="form-note" data-form-note>We will prepare the callback request for WhatsApp and email.</p>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

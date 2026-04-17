@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Packaging quote planning illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5f8fc" />
+      <stop offset="100%" stop-color="#e8f0f8" />
+    </linearGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d2b52" />
+      <stop offset="100%" stop-color="#18497b" />
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eb7a1a" />
+      <stop offset="100%" stop-color="#f29a37" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="120" y="130" width="420" height="520" rx="28" fill="#ffffff" stroke="#d9e3ee" stroke-width="4"/>
+  <rect x="180" y="210" width="300" height="26" rx="13" fill="#e7eef7"/>
+  <rect x="180" y="280" width="260" height="26" rx="13" fill="#e7eef7"/>
+  <rect x="180" y="350" width="280" height="26" rx="13" fill="#e7eef7"/>
+  <rect x="180" y="420" width="220" height="26" rx="13" fill="#e7eef7"/>
+  <rect x="180" y="500" width="180" height="70" rx="22" fill="url(#orange)"/>
+  <rect x="660" y="190" width="300" height="220" rx="28" fill="url(#navy)"/>
+  <rect x="710" y="250" width="200" height="120" rx="20" fill="#fff0df"/>
+  <circle cx="780" cy="520" r="86" fill="url(#orange)"/>
+  <path d="M748 520 774 546 824 490" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="705" fill="#123964" font-size="48" font-family="Arial, sans-serif" font-weight="800">Quote Planning and Requirement Review</text>
+  <text x="120" y="758" fill="#6f8094" font-size="26" font-family="Arial, sans-serif">Dummy visual for inquiry forms, sizing, and dispatch estimation</text>
+</svg>

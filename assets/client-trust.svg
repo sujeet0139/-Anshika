@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Client trust and review illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7ed" />
+      <stop offset="100%" stop-color="#f5f8fc" />
+    </linearGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d2b52" />
+      <stop offset="100%" stop-color="#18497b" />
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eb7a1a" />
+      <stop offset="100%" stop-color="#f29a37" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="120" y="170" width="300" height="360" rx="32" fill="#ffffff" stroke="#d9e3ee" stroke-width="4"/>
+  <circle cx="270" cy="285" r="74" fill="url(#navy)"/>
+  <rect x="190" y="390" width="160" height="22" rx="11" fill="#e7eef7"/>
+  <rect x="170" y="438" width="200" height="18" rx="9" fill="#e7eef7"/>
+  <rect x="170" y="475" width="180" height="18" rx="9" fill="#e7eef7"/>
+  <rect x="500" y="200" width="580" height="310" rx="36" fill="url(#navy)"/>
+  <text x="560" y="300" fill="#ffffff" font-size="42" font-family="Arial, sans-serif" font-weight="800">Client Satisfaction Snapshot</text>
+  <text x="560" y="368" fill="#d9e3ee" font-size="28" font-family="Arial, sans-serif">Dummy review graphic for trust, repeat supply, and packaging reliability</text>
+  <g fill="url(#orange)">
+    <path d="M585 430 605 470 650 476 617 507 625 552 585 530 545 552 553 507 520 476 565 470Z"/>
+    <path d="M690 430 710 470 755 476 722 507 730 552 690 530 650 552 658 507 625 476 670 470Z"/>
+    <path d="M795 430 815 470 860 476 827 507 835 552 795 530 755 552 763 507 730 476 775 470Z"/>
+  </g>
+  <text x="120" y="690" fill="#123964" font-size="48" font-family="Arial, sans-serif" font-weight="800">Trusted by Packaging Buyers</text>
+  <text x="120" y="742" fill="#6f8094" font-size="26" font-family="Arial, sans-serif">Dummy testimonial illustration for manufacturer credibility</text>
+</svg>

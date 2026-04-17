@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Industrial supply network illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08172c" />
+      <stop offset="100%" stop-color="#18497b" />
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eb7a1a" />
+      <stop offset="100%" stop-color="#f29a37" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="220" cy="220" r="80" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="600" cy="180" r="80" fill="url(#orange)"/>
+  <circle cx="980" cy="250" r="80" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="350" cy="560" r="80" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="850" cy="560" r="80" fill="url(#orange)"/>
+  <path d="M290 240 520 195" stroke="#d9e3ee" stroke-width="10" stroke-linecap="round"/>
+  <path d="M680 195 900 245" stroke="#d9e3ee" stroke-width="10" stroke-linecap="round"/>
+  <path d="M270 280 330 500" stroke="#d9e3ee" stroke-width="10" stroke-linecap="round"/>
+  <path d="M670 245 815 500" stroke="#d9e3ee" stroke-width="10" stroke-linecap="round"/>
+  <path d="M430 560 770 560" stroke="#d9e3ee" stroke-width="10" stroke-linecap="round"/>
+  <text x="90" y="690" fill="#ffffff" font-size="48" font-family="Arial, sans-serif" font-weight="800">Industries Connected by Packaging Supply</text>
+  <text x="90" y="742" fill="#d9e3ee" font-size="26" font-family="Arial, sans-serif">Dummy network visual for FMCG, retail, pharma, electronics, and logistics</text>
+</svg>

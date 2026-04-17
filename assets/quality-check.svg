@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Packaging quality inspection illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef3f8" />
+      <stop offset="100%" stop-color="#dbe6f2" />
+    </linearGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d2b52" />
+      <stop offset="100%" stop-color="#18497b" />
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eb7a1a" />
+      <stop offset="100%" stop-color="#f29a37" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="110" y="120" width="980" height="560" rx="34" fill="#ffffff" stroke="#d9e3ee" stroke-width="4"/>
+  <rect x="160" y="210" width="250" height="280" rx="24" fill="url(#navy)"/>
+  <rect x="220" y="270" width="130" height="160" rx="18" fill="#fff0df"/>
+  <circle cx="560" cy="290" r="70" fill="url(#orange)"/>
+  <path d="M530 290 552 312 596 262" fill="none" stroke="#ffffff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="680" y="220" width="280" height="38" rx="18" fill="#eaf0f7"/>
+  <rect x="680" y="300" width="220" height="34" rx="17" fill="#eaf0f7"/>
+  <rect x="680" y="380" width="240" height="34" rx="17" fill="#eaf0f7"/>
+  <rect x="680" y="460" width="180" height="34" rx="17" fill="#eaf0f7"/>
+  <text x="160" y="620" fill="#123964" font-size="46" font-family="Arial, sans-serif" font-weight="800">Quality Checked Packaging</text>
+  <text x="160" y="675" fill="#6f8094" font-size="26" font-family="Arial, sans-serif">Dummy visual for manufacturing assurance and material inspection</text>
+</svg>
